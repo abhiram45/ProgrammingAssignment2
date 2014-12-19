@@ -1,3 +1,9 @@
+## this function works like a class, it creates a list
+# that contains 4 member functions: set, get, setInv
+# and getInv. it uses <<- assignment operator so that
+# these internal variables are not exposed to the
+# outside environment. 
+
 makeCacheMatrix <- function(x = matrix()) {
 xinv <- NULL # this is where the result of inversion is stored
       # A setter function, use this to set a matrix to object created by makeCacheMatrix function
@@ -22,15 +28,6 @@ xinv <- NULL # this is where the result of inversion is stored
 	       setInv = setInv,
 	       getInv = getInv)
 }
-
-
-## this function works like a class, it creates a list
-# that contains 4 member functions: set, get, setInv
-# and getInv. it uses <<- assignment operator so that
-# these internal variables are not exposed to the
-# outside environment. 
-
-
 cacheSolve <- function(x, ...) {
         m <- x$getInv() # get the inversed matrix from object x
       # it will be null if uncalculated, remember the first line "xinv <- NULL" in the previous function
